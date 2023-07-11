@@ -2,6 +2,4 @@ Milk
 Bread
 Bananas
 Eggs
-Potato chips
-Ice cream
-Fudge
+Corn
