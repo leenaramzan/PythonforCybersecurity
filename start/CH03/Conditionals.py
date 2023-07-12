@@ -2,6 +2,5 @@
 # example workign with conditionals
 #By 
 
-day = int(input("Is today a good day?"))
-if y == answer
-    print("Yes it is!")
+your_day = input("Is today a good day?")
+print("Yes it is!")
