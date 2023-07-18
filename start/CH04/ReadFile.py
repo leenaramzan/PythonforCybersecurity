@@ -2,9 +2,15 @@
 # Sample script that reads from a file
 # By Leena on 7/18
 
-# Open file for reading
-f = open("hackme.txt", "r")
+import os
+dir_path + os.path.dirname(os.path.realpath(__file__))
 
-# Read the file
+# Open file for reading
+f = open(dir_path + "/hackme.txt", "r")
+
+# Read the file and print to screen
+contents = f.read()
+print(contents)
 
 # Close the file
+f.close()
