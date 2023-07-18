@@ -3,9 +3,9 @@
 # By Leena on 7/18
 
 import os
-dir_path + os.path.dirname(os.path.realpath(__file__))
+dir_path = os.path.dirname(os.path.realpath(__file__))
 
-# Open file for reading
+# Open file for writing
 f = open(dir_path + "/hackme.txt", "r")
 
 # Read the file and print to screen
