@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 # Sample script that reads from a file
-# By 
+# By Leena on 7/18
 
-ip_file = open("hackme.txt", "r")
-ip_addresses = ip_file.read()
-print(ip_addresses)
-ip_file.close()
+# Open file for reading
+f = open("hackme.txt", "r")
+
+# Read the file
+
+# Close the file
