@@ -7,34 +7,34 @@
 import hashlib
 import requests
 
-# function to check passwords
+# function to check password
 def check_haveibeenphoned(sha_prefix):
     pwnd_dict = {}
-    # Perform API request
-    request_uri = "https://api.pnwedpasswords.com/range/" + sha_prefix
+    # perform API request
+    request_uri = "https://api.pwnedpasswords.com/range/" + sha_prefix
     results = requests.get(request_uri)
-    # Confirm if found
+    # confirm if found
     pwned_list = results.text.split("\r\n")
     for pwnd_pass in pwned_list:
         temp_pass = pwnd_pass.split(":")
         pwnd_dict[temp_pass[0]] = temp_pass[1]
     return pwnd_dict
 
-# Ask for password
-new_password = input("What password needs to be checked? ")
+
+# ask for password 
+new_password = input("What password need to be checked? ")
 
 # Hash the password
 encoded_password = new_password.encode()
 digest_password = hashlib.sha1(encoded_password)
 hashed_password = digest_password.hexdigest()
-print(hashed_password)
 
 # Split hash
 sha_prefix = hashed_password[0:5]
-sha_postfix = hashed_password[5:].upper()
+sha_postfix = hashed_password[5:]
 
-# Check the password hash
-check_haveibeenphoned(sha_prefix)
+# Check password hash
+pwnd_dict = check_haveibeenphoned(sha_prefix)
 
 # Check results
 if sha_postfix in pwnd_dict.keys():
